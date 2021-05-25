@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Rare earth graph</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Your styles should be called here -->
+    <style>
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        font-size: 16px;
+        font-family: 'Oxygen', sans-serif;
+      }
+
+
+      figure,
+      img {
+
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .annotate {
+        position: relative;
+      }
+
+      .annotate .dot {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #FFF;
+        color: #FFF;
+      }
+
+      .annotate .dot .inner {
+        position: absolute;
+        opacity: 0;
+        padding: 25px;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .annotate .dot .close {
+        position: absolute;
+        color: #FFF;
+        top: 10px;
+        right: 10px;
+        font-size: 2em;
+        text-decoration: none;
+        opacity: 0;
+      }
+
+      .annotate .dot.green {
+        background-color: rgba(0, 110, 65, 0.65);
+      }
+
+      .annotate .dot.purple {
+        background-color: rgba(74, 2, 242, 0.65);
+      }
+
+      .annotate .dot.red {
+        background-color: rgba(230, 11, 65, 0.65);
+      }
+
+      .annotate .dot.blue {
+        background-color: rgba(11, 18, 230, 0.65);
+      }
+
+      .annotate .dot.pink {
+        background-color: rgba(240, 12, 182, 0.65);
+      }
+
+      .annotate .dot.yellow {
+        background-color: yellow;
+      }
+
+      .annotate .dot.active {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+        border: 0;
+        z-index: 2;
+      }
+
+      .annotate .dot.active .inner,
+      .annotate .dot.active .close {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      #one:not(.active) {
+        top: 80%;
+        left: 25%;
+      }
+
+      #two:not(.active) {
+        top: 75%;
+        left: 40%;
+      }
+
+      #three:not(.active) {
+        top: 68%;
+        left: 52%;
+      }
+
+      #four:not(.active) {
+        top: 60%;
+        left: 75%;
+      }
+
+      #five:not(.active) {
+        top: 80%;
+        left: 85%;
+      }
+
+      #six:not(.active) {
+        top: 45%;
+        left: 90%;
+      }
+
+      .caption,
+      figcaption {
+        font-size: 0.9rem;
+        color: #8e8a8a;
+        padding: 5px 0;
+      }
+
+      .container {
+        margin: 15px;
+      }
+
+      .container .map {
+        max-width: 1200px;
+        display: block;
+        margin: 10px auto;
+      }
+
+      .container.image .caption,
+      .container.image figcaption {
+        padding: 5px 10px;
+      }
+
+      @media(min-width: 681px) {}
+
+      @media(min-width: 769px) {
+
+        .container {
+          width: 100%;
+          max-width: 800px;
+          display: block;
+          margin: 10px auto;
+        }
+      }
+
+      @media(min-width: 805px) {
+        .container {
+          width: 100%;
+          max-width: 800px;
+          display: block;
+          margin: 10px auto;
+        }
+      }
+
+      @media(min-width: 1205px) {
+
+        .container.image .caption,
+        .container.image figcaption {
+          padding: 5px 0;
+        }
+
+        .container {
+          width: 100%;
+          max-width: 800px;
+          display: block;
+          margin: 10px auto;
+        }
+      }
+    </style>
+  </head>
+
+  <!-- YOUR CONTENT GOES HERE -->
+
+  <body>
+    <div class="container image">
+      <div class="annotate">
+        <h2>Global rare earth oxide production</h2>
+        <p>While the U.S. led the world in rare earth production in the 1960s and 1970s, China emerged as the dominant producer in the 1980s. Click the dots to learn more.</p>
+        <img src="images/graph.png" />
+        <p class="caption"><b>Source: </b>U.S. Geological Survey, <a href="https://pubs.usgs.gov/of/2011/1042/of2011-1042.pdf">"China's Rare Earth Industry"</a></p>
+        <div id="one" class="dot green">
+          <a class="close fa fa-times" href="#"></a>
+          <div class="inner">
+            <h3>1965</h3>
+            <p>Demand for rare earths shot up in the mid-1960s with the invention of color TVs</p>
+          </div>
+        </div>
+        <div id="two" class="dot green">
+          <a class="close fa fa-times" href="#"></a>
+          <div class="inner">
+            <h3>1965–1985</h3>
+            <p>U.S. is the world’s top producer of rare earths, led by Mountain Pass Mine in California</p>
+          </div>
+        </div>
+        <div id="three" class="dot green">
+          <a class="close fa fa-times" href="#"></a>
+          <div class="inner">
+            <h3>1980s</h3>
+            <p>China enters the market</p>
+          </div>
+        </div>
+        <div id="four" class="dot green">
+          <a class="close fa fa-times" href="#"></a>
+          <div class="inner">
+            <h3>1985-2000</h3>
+            <p>China becomes the world’s leading producer</p>
+          </div>
+        </div>
+        <div id="five" class="dot green">
+          <a class="close fa fa-times" href="#"></a>
+          <div class="inner">
+            <h3>2000s</h3>
+            <p>Unable to compete with China, Mountain Pass Mine and other producers around the world shut down.</p>
+          </div>
+        </div>
+        <div id="six" class="dot green">
+          <a class="close fa fa-times" href="#"></a>
+          <div class="inner">
+            <h3>2000–present</h3>
+            <p>Demand for rare earths skyrocket as they become critical components in consumer electronics, industrial equipment, and defense technology</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your javascript should be called here -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const dots = document.querySelectorAll(".dot");
+
+        dots.forEach(function(dot) {
+          dot.addEventListener("click", function(e) {
+            e.preventDefault();
+            const clicked_dot = e.target.closest(".dot");
+
+            if (clicked_dot.classList.contains("active")) {
+              clicked_dot.classList.remove("active");
+            } else {
+              clicked_dot.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+
+</html>
